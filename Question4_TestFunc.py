@@ -1,5 +1,5 @@
 import random
-from Question3_programs import Membership_unsorted
+import Question3_programs
 import Mutation_1
 import Mutation_2
 import Mutation_3
@@ -15,17 +15,20 @@ def RandomArrayGenerator(length=6, low=1, high=10000):
         array.append(element)
     return array
 
-
+import copy
 def Test_Random():
     counter = 1
     errorfound = 0
+
     while errorfound != 1:
         input_array = RandomArrayGenerator()
+        input_array_test = copy.copy(input_array)
+
         key = input_array[random.randint(0, len(input_array))]
 
-        correct_result = Membership_unsorted(input_array, key)
-        mutated_result = Mutation_6.Membership_unsorted(input_array, key)  # to be modified
-        print (input_array,key, correct_result, mutated_result)
+        correct_result = Question3_programs.Membership_unsorted(input_array, key)
+        mutated_result = Mutation_3.Membership_unsorted(input_array_test, key)  # to be modified
+        print (input_array, key, correct_result, mutated_result)
         if correct_result == mutated_result:
             counter = counter + 1
         else:
@@ -42,10 +45,11 @@ def Test_Pairwise():
     print(input)
     while errorfound != 1:
         for elements in input: # choose one combination from pairwise array
+            elements_test = copy.copy(elements)
             key = elements[random.randint(0, len(elements)-1)]
             #print(key, elements)
-            correct_result = Membership_unsorted(elements, key)
-            mutated_result = Mutation_4.Membership_unsorted(elements, key)  # to be modified
+            correct_result = Question3_programs.Membership_unsorted(elements, key)(elements, key)
+            mutated_result = Mutation_4.Membership_unsorted(elements_test, key)  # to be modified
             #print (input, key, correct_result, mutated_result)
             if correct_result == mutated_result:
                 counter = counter + 1
