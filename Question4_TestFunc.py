@@ -48,8 +48,8 @@ def Test_Pairwise():
             elements_test = copy.copy(elements)
             key = elements[random.randint(0, len(elements)-1)]
             #print(key, elements)
-            correct_result = Question3_programs.Membership_unsorted(elements, key)(elements, key)
-            mutated_result = Mutation_4.Membership_unsorted(elements_test, key)  # to be modified
+            correct_result = Question3_programs.Membership_unsorted(elements, key)
+            mutated_result = Mutation_6.Membership_unsorted(elements_test, key)  # to be modified
             #print (input, key, correct_result, mutated_result)
             if correct_result == mutated_result:
                 counter = counter + 1
@@ -103,5 +103,5 @@ def pairwise(length=6, low= 1, high=10000):
     return testCases # testcase include 0, 1, 2 wise
 
 if __name__ == "__main__":
-    Test_Random()
-    #Test_Pairwise()
+    #Test_Random()
+    Test_Pairwise()
