@@ -7,7 +7,7 @@ import Mutation_4
 import Mutation_5
 import Mutation_6
 
-def RandomArrayGenerator(length=6, low=0, high=100):
+def RandomArrayGenerator(length=6, low=1, high=10000):
     array = []
     #random.seed(10)
     for i in range(length):
@@ -24,7 +24,7 @@ def Test_Random():
         key = input_array[random.randint(0, len(input_array))]
 
         correct_result = Membership_unsorted(input_array, key)
-        mutated_result = Mutation_2.Membership_unsorted(input_array, key)  # to be modified
+        mutated_result = Mutation_6.Membership_unsorted(input_array, key)  # to be modified
         print (input_array,key, correct_result, mutated_result)
         if correct_result == mutated_result:
             counter = counter + 1
@@ -45,7 +45,7 @@ def Test_Pairwise():
             key = elements[random.randint(0, len(elements)-1)]
             #print(key, elements)
             correct_result = Membership_unsorted(elements, key)
-            mutated_result = Mutation_2.Membership_unsorted(elements, key)  # to be modified
+            mutated_result = Mutation_4.Membership_unsorted(elements, key)  # to be modified
             #print (input, key, correct_result, mutated_result)
             if correct_result == mutated_result:
                 counter = counter + 1
@@ -57,7 +57,7 @@ def Test_Pairwise():
                 break
     return
 
-def pairwise(length=6, low= 1, high=100):
+def pairwise(length=6, low= 1, high=10000):
     defaults = []
     typicals = []
     testCases = []
@@ -99,5 +99,5 @@ def pairwise(length=6, low= 1, high=100):
     return testCases # testcase include 0, 1, 2 wise
 
 if __name__ == "__main__":
-
-    Test_Pairwise()
+    Test_Random()
+    #Test_Pairwise()

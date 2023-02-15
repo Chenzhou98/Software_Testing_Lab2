@@ -24,7 +24,10 @@ def Membership_binarySearch(arr, x):
     l = 0
     r = len(arr)-1
     while  l <= r:
-        mid = l + (r - l) // 4 #Floor Division # //2 change to // 4
+        #print("left",l,"right",r)
+        #Floor Division # //2 change to // 4
+        mid = l + (r - l) // 4
+        #print("mid",mid)
         if arr[mid] == x:
             return 1
         elif arr[mid] > x:
