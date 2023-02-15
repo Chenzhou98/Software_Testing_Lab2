@@ -38,7 +38,7 @@ def Membership_binarySearch(arr, x):
         return 0
 
 def Membership_unsorted(arr,x):
-    #arr = bubble_sort(arr)
+    arr = bubble_sort(arr)
     return Membership_binarySearch(arr,x)
 
 if __name__ == "__main__":
